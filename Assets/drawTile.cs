@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class drawTile : MonoBehaviour
+public class DrawTile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Color tileColor; 
+    private TextMeshProUGUI numText;
+    public int number;
+    private Image image;
+
+    public void Paint()
     {
-        
+        numText = GetComponentInChildren<TextMeshProUGUI>();
+        numText.color = tileColor;
+        if (number > 0) numText.text = number.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //private void OnValidate()
+    //{
+    //    numText = GetComponentInChildren<TextMeshProUGUI>();
+    //    numText.color = tileColor;
+    //    if (number > 0) numText.text = number.ToString();
+    //    else numText.text = "";
+    //}
 }
